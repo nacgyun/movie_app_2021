@@ -1,0 +1,47 @@
+{
+  "user": [
+    {
+      "id": 1,
+      "nickname": "유저1",
+      "mannerRate": 4.7
+    },
+    {
+      "id": 2,
+      "nickname": "유저2",
+      "mannerRate": 3.9
+    },
+    {
+      "id": 3,
+      "nickname": "유저3",
+      "mannerRate": 3.6
+    },
+    {
+      "id": 4,
+      "nickname": "유저4",
+      "mannerRate": 4.5
+    }
+  ],
+  "room": [
+    {
+      "rid": 1636451924771,
+      "purchaser": 10000001,
+      "totalPrice": null,
+      "totalTip": 10000,
+      "shop": "맘스터치"
+    },
+    {
+      "rid": 1636451929827,
+      "purchaser": 10000002,
+      "totalPrice": null,
+      "totalTip": 13000,
+      "shop": "버거킹"
+    },
+    {
+      "rid": 1656451295827,
+      "purchaser": 10000003,
+      "totalTip": 8000,
+      "totalPrice": null,
+      "shop": "맥도날드"
+    }
+  ]
+}

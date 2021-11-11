@@ -1,25 +1,29 @@
 import React from "react";
-import axios from "axios";
+import {BrowserRouter, Route, Switch} from "react-router-dom"
+import Home from "./routes/Home"
+import Navigation from "./components/Navigation";
+import Rooms from "./routes/Rooms";
+import Room from "./routes/Room"
+import Addroom from "./routes/Addroom";
+import ReceivePhoto from "./routes/ReceivePhoto";
+import MannerRate from "./routes/MannerRate";
 
-class App extends React.Component{
-  state = {
-    isLoading: true,
-    movies: []
-  };
-  getMovies = async() => {
-    const movies = await axios.get("https://yts-proxy.nomadcoders1.now.sh/list_movies.json")
-
-  }
-  componentDidMount(){
-    this.getMovies();
-    setTimeout(()=>{
-      this.setState({ isLoading:false});
-    }, 5000);
-  }
-  render() {
-    const{isLoading}= this.state;
-    return <div>{isLoading ? "Loading..." : "We are ready"}</div>;
-  }
+function App () {
+  return (
+    <BrowserRouter>
+    <Navigation />
+    <div>
+    <Switch>
+      <Route path="/" exact={true} component={Home} ></Route>
+      <Route path="/rooms/addRoom" exact={true} component={Addroom} ></Route>
+      <Route path="/rooms/:rid" exact={true} component={Room} ></Route>
+      <Route path="/rooms/:rid/mannerRate" exact={true} component={MannerRate} ></Route>
+      <Route path="/rooms/:rid/photo" component={ReceivePhoto} ></Route>
+      <Route path="/rooms" exact={true} component={Rooms} ></Route>
+        </Switch>
+      </div>
+    </BrowserRouter>
+  )
 }
 
 export default App;
